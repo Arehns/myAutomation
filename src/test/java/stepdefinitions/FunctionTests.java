@@ -28,22 +28,14 @@ public class FunctionTests {
 
     private WebDriver driver;
 
-
     @Given("I have used {string} as browser")
     public void i_have_used_as_browser(String browser) throws InterruptedException {
         DriveCreator creator = new DriveCreator();
 
         driver = creator.createBrowser(browser);
-
         driver.get("https://www.marshu.com/articles/calculate-addition-calculator-add-two-numbers.php");
 
-
-
-
     }
-
-
-
 
     @Given("I have entered {int} into the calculator")
     public void sendFirstNumber(int first) {
