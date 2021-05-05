@@ -48,7 +48,7 @@ public class FunctionTests {
     }
 
     private void sendKeys(WebDriver driver, By by, String keys) {
-        (new WebDriverWait(driver,10)).until(ExpectedConditions.presenceOfElementLocated(by));
+        (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(by));
         driver.findElement(by).sendKeys(keys);
         System.out.println("Sending keys");
 
@@ -70,10 +70,9 @@ public class FunctionTests {
     }
 
     private void click(WebDriver driver, By by) {
-        (new WebDriverWait(driver,10)).until(ExpectedConditions.elementToBeClickable(by));
+        (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(by));
         driver.findElement(by).click();
     }
-
 
 
 }
