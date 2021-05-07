@@ -1,0 +1,29 @@
+1❖Skapa användare – allt går som förväntat
+
+2❖ Skapa användare – långt användarnamn
+(mer än 100 tecken)
+
+3❖ Skapa användare – användare redan
+upptagen
+
+4❖ Skapa användare – e-mail saknas
+
+5❖ Verifiering skall ske på varje testfall med
+minst en Junit assert. Verifieringen skall vara
+på ett sådant sätt att den även upptäcker
+när testfallet går fel
+
+6❖ Testfallen skall skapas genom en Scenario
+Outline ifrån en feature-fil
+
+7❖ Feature-filen skall vara skapad enligt BDD
+och innehålla en tydlig beskrivning
+
+
+8❖ Feature-filen skall kopplas till Selenium
+Webdriver-kod som utför testandet
+
+9❖ Testfallen skall vara dynamiska så att de går
+att köra igen utan att behöva förändra
+koden i testfallen och så att testfallen
+fortfarande ger rätt resultat
