@@ -28,7 +28,7 @@ public class FunctionTests {
 
     private WebDriver driver;
 
-    @Given("I have used {string} as browser")
+   /* @Given("I have used {string} as browser")
     public void i_have_used_as_browser(String browser) throws InterruptedException {
         DriveCreator creator = new DriveCreator();
 
@@ -72,7 +72,42 @@ public class FunctionTests {
     private void click(WebDriver driver, By by) {
         (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(by));
         driver.findElement(by).click();
+    } */
+
+    @Given("I enter andrea.skriv@hotmail.com, AndreaAutoUppgift, Chocko1!")
+    public void i_enter_andrea_skriv_hotmail_com_andrea_auto_uppgift_chocko1() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
+
+    @When("I click signup button")
+    public void i_click_signup_button() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Then("I should be represented with Success")
+    public void i_should_be_represented_with_success() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Given("I enter hxnpqvdepfhubmvdvf@kiabws.com, AaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaA, Buddy123")
+    public void i_enter_hxnpqvdepfhubmvdvf_kiabws_com_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_a_buddy123() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Then("I should be represented with Fail")
+    public void i_should_be_represented_with_fail() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+
+
+
+
 
 
 }
