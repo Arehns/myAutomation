@@ -74,32 +74,28 @@ public class FunctionTests {
         driver.findElement(by).click();
     } */
 
-    @Given("I enter andrea.skriv@hotmail.com, AndreaAutoUppgift, Chocko1!")
-    public void i_enter_andrea_skriv_hotmail_com_andrea_auto_uppgift_chocko1() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Given("user opens up browser {string}")
+    public void user_opens_up_browser(String string) {
+        System.out.println("Good");
     }
 
-    @When("I click signup button")
-    public void i_click_signup_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Given("navigates to Sign up webpage")
+    public void navigates_to_sign_up_webpage() {
+        System.out.println("Good");
     }
 
-    @Then("I should be represented with Success")
-    public void i_should_be_represented_with_success() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Given("enter {string}")
+    public void enter(String string) {
+        System.out.println("Good");
     }
 
-    @Given("I enter hxnpqvdepfhubmvdvf@kiabws.com, AaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaA, Buddy123")
-    public void i_enter_hxnpqvdepfhubmvdvf_kiabws_com_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_aaaaa_a_buddy123() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("user clicks on Sign up button")
+    public void user_clicks_on_sign_up_button() {
+        System.out.println("Good");;
     }
 
-    @Then("I should be represented with Fail")
-    public void i_should_be_represented_with_fail() {
+    @Then("user receives feedback")
+    public void user_receives_feedback() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }

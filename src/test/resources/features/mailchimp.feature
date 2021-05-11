@@ -1,14 +1,16 @@
 Feature: Signing up to mailchimp
-  Background: Test the Sign up feature.
 
 
     Scenario Outline: Enter personal information
-      Given I enter <email>, <username>, <password>
-      When I click signup button
-      Then I should be represented with <status>
+     Given user opens up browser "<browser>"
+      And navigates to Sign up webpage
+      * enter "<email>"
+      * enter "<username>"
+      * enter "<password>"
+      When user clicks on Sign up button
+      Then user receives feedback
 
       Examples:
-      |email|username|password|status|
-      |andrea.skriv@hotmail.com|AndreaAutoUppgift|Chocko1!|Success|
-      |hxnpqvdepfhubmvdvf@kiabws.com|AaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaAaaaaA|Buddy123|Fail|
-
+      |browser|email|username|password|
+      |chrome |good@gmail|tenessee|boii123!|
+      |chrome |no email  |tenessee|boii123!|
