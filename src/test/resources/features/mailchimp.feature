@@ -7,7 +7,7 @@ Feature: Signing up to mailchimp
       And and then enter "<username>"
       And then lastly enter "<password>"
       When user clicks on Sign up button
-      #Then user receives feedback
+      Then user receives feedback
 
       Examples:
       |browser|email|username|password|
@@ -17,9 +17,9 @@ Feature: Signing up to mailchimp
       #|chrome|random email|tooLongName|Buggy123!       |
     #  |edge |random email|randomName|Buggy123!|
     #  |edge |no email|randomName|Buggy123!|
-     # |edge|random email|AndreaAutoUppgift|Buggy123!|
+      |edge|random email|AndreaAutoUppgift|Buggy123!|
    #   |edge|"random email"|tooLongName|Buggy123!       |
      # |firefox |random email|randomName|Buggy123!|
    #   |firefox|"no email"|randomName|Buggy123!|
    #   |firefox|random email|AndreaAutoUppgift|Buggy123!|
-  #    |firefox|random email|tooLongName|Buggy123!       |
+       |firefox|random email|tooLongName|Buggy123!       |

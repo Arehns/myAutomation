@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AcceptCookies {
     public static void Cookies(WebDriver driver, By by){
-        (new WebDriverWait(driver,10)).until(ExpectedConditions.elementToBeClickable(by));
+        (new WebDriverWait(driver,20)).until(ExpectedConditions.elementToBeClickable(by));
         driver.findElement(by).click();
     }
 }
