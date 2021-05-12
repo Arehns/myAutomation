@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ButtonClicker {
 
     public void click(WebDriver driver, By by) {
-        (new WebDriverWait(driver,50)).until(ExpectedConditions.elementToBeClickable(by));
+        (new WebDriverWait(driver, 50)).until(ExpectedConditions.elementToBeClickable(by));
         driver.findElement(by).click();
     }
 }
