@@ -29,12 +29,17 @@ public class FunctionTests {
 
     private WebDriver driver;
     SendKeys s = new SendKeys();
+    ButtonClicker c = new ButtonClicker();
 
     @Given("user opens Sign up web page in browser {string}")
     public void user_opens_up_browser(String browser) {
         DriveCreator creator = new DriveCreator();
         driver = creator.createBrowser(browser);
         driver.get("https://login.mailchimp.com/signup/");
+    }
+    @Given("click on Accept all Cookies")
+    public void click_on_accept_all_cookies() {
+        c.click(driver, By.id("onetrust-accept-btn-handler"));
     }
     @Given("enter {string}")
     public void enter(String email) {
@@ -45,43 +50,25 @@ public class FunctionTests {
 
     @Given("and then enter {string}")
     public void and_then_enter(String user) {
-            s.sendKeys(driver, By.id("new_username"), (user));
+        s.sendKeys(driver, By.id("new_username"), (user));
         System.out.println(user);
     }
 
     @Given("then lastly enter {string}")
     public void then_lastly_enter(String pass) {
-            s.sendKeys(driver, By.id("new_password"), (pass));
+        s.sendKeys(driver, By.id("new_password"), (pass));
         System.out.println(pass);
-
-
     }
 
-/*
+    @When("user clicks on Sign up button")
+    public void user_clicks_on_sign_up_button() {
+        c.click(driver, By.id("create-account"));
+    }
 
-
-private void click(WebDriver driver, By by) {
-        (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(by));
-        driver.findElement(By.name("marketing-newsletter")).click();
-
-   /* @Then("user receives feedback")
+    @Then("user receives feedback")
     public void user_receives_feedback() {
         System.out.println("No answer yet");
-        driver.quit();*/
-
+        driver.quit();
     }
-
-/*
-    }
-@When("user clicks on Sign up button")
-public void user_clicks_on_sign_up_button() {
-
-    click(driver, By.cssSelector("input[name='marketing-newsletter']"));
-    System.out.println("Good");
-    ;
 }
-    private void click(WebDriver driver, By by) {
-        (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(by));
-        driver.findElement(By.name("marketing-newsletter")).click();
-    } */
 
