@@ -3,14 +3,14 @@ Feature: Signing up to mailchimp
     Scenario Outline: Enter personal information
      Given user opens Sign up web page in browser "<browser>"
       And enter "<email>"
-     # And and then enter "<username>"
-      #And then lastly enter "<password>"
+      And and then enter "<username>"
+      And then lastly enter "<password>"
      #When user clicks on Sign up button
       #Then user receives feedback
 
       Examples:
       |browser|email|username|password|
-      |chrome |"random email"|randomName|Buggy123!|
+      |chrome |random email|randomName|Buggy123!|
      # |chrome|no email|randomName|Buggy123!|
       #|chrome|random email|AndreaAutoUppgift |Buggy123!|
       #|chrome|random email|tooLongName|Buggy123!       |

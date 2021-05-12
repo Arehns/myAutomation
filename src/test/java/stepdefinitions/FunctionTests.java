@@ -28,7 +28,7 @@ public class FunctionTests {
 
 
     private WebDriver driver;
-
+    SendKeys s = new SendKeys();
 
     @Given("user opens Sign up web page in browser {string}")
     public void user_opens_up_browser(String browser) {
@@ -38,36 +38,26 @@ public class FunctionTests {
     }
     @Given("enter {string}")
     public void enter(String email) {
-        sendKeys(driver, By.id("email"), (email));
-    }
 
-    private void sendKeys(WebDriver driver, By by, String keys) {
-        (new WebDriverWait(driver,10)).until(ExpectedConditions.presenceOfElementLocated(by));
-        driver.findElement(by.id("email")).sendKeys(keys);
-        System.out.println("Sending keys");
+        s.sendKeys(driver, By.name("email"), (email));
 
     }
-
-/*
-
-
-
-
 
     @Given("and then enter {string}")
     public void and_then_enter(String user) {
-            sendKeys(driver, By.cssSelector("input[name=email]"), user);
-            System.out.println("Good");
+            s.sendKeys(driver, By.id("new_username"), (user));
+        System.out.println(user);
     }
 
     @Given("then lastly enter {string}")
     public void then_lastly_enter(String pass) {
-            sendKeys(driver, By.cssSelector("input[name=email]"), pass);
-            System.out.println("Good");
+            s.sendKeys(driver, By.id("new_password"), (pass));
+        System.out.println(pass);
+
 
     }
 
-
+/*
 
 
 private void click(WebDriver driver, By by) {

@@ -8,5 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class SendKeys {
 
 
+    public void sendKeys(WebDriver driver, By by, String keys) {
+        (new WebDriverWait(driver,10)).until(ExpectedConditions.presenceOfElementLocated(by));
+        driver.findElement(by).sendKeys(keys);
+        System.out.println("Sending keys");
 
+    }
 }
