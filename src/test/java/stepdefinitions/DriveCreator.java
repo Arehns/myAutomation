@@ -13,14 +13,14 @@ public class DriveCreator {
         WebDriver driver = null;
 
         if(browser.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\andrea\\selenium\\drivers\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "C:\\Users\\andre\\selenium\\drivers\\chromedriver.exe");
             driver = new ChromeDriver();
         } else if(browser.equals("edge")) {
-            System.setProperty("webdriver.edge.driver", "C:\\Users\\andrea\\selenium\\drivers\\msedgedriver.exe");
+            System.setProperty("webdriver.edge.driver", "C:\\Users\\andre\\selenium\\drivers\\msedgedriver.exe");
             driver = new EdgeDriver();
         }
         else if (browser.equals("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "C:\\Users\\andrea\\selenium\\drivers\\geckodriver.exe");
+            System.setProperty("webdriver.gecko.driver", "C:\\Users\\andre\\selenium\\drivers\\geckodriver.exe");
             driver = new FirefoxDriver();
         }
 

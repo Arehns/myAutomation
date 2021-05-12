@@ -2,15 +2,15 @@ Feature: Signing up to mailchimp
 
 
     Scenario Outline: Enter personal information
-     Given user opens up browser "<browser>"
-      And navigates to Sign up webpage
-      * enter "<email>"
-      * enter "<username>"
-      * enter "<password>"
-      When user clicks on Sign up button
-      Then user receives feedback
+     Given user opens Sign up web page in browser "<browser>"
+      #And enter "<email>"
+     # And and then enter "<username>"
+      #And then lastly enter "<password>"
+     When user clicks on Sign up button
+      #Then user receives feedback
 
       Examples:
-      |browser|email|username|password|status|
-      |chrome |good@gmail|tenessee|boii123!|success|
-      |chrome |no email  |tenessee|boii123!|fail   |
+      |browser|email|username|password|
+      |chrome |goodman@gmail|tennessee|boy123!|
+      |edge |no email  |tennessee|boy123!|
+      |firefox|        |         |       |
