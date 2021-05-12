@@ -1,0 +1,3 @@
+//https://www.codegrepper.com/code-examples/java/generate+random+string+of+specific+length+in+java
+
+    //https://www.browserstack.com/guide/sendkeys-in-selenium

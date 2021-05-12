@@ -10,15 +10,15 @@ Feature: Signing up to mailchimp
 
       Examples:
       |browser|email|username|password|
-      |chrome |random email|randomName|Buggy123!|
-      |chrome|no email|randomName|Buggy123!|
-      |chrome|random email|AndreaAutoUppgift |Buggy123!|
-      |chrome|random email|tooLongName|Buggy123!       |
-      |edge |random email|randomName|Buggy123!|
-      |edge |no email|randomName|Buggy123!|
-      |edge|random email|AndreaAutoUppgift|Buggy123!|
-      |edge|random email|tooLongName|Buggy123!       |
-      |firefox |random email|randomName|Buggy123!|
-      |firefox|no email|randomName|Buggy123!|
-      |firefox|random email|AndreaAutoUppgift|Buggy123!|
-      |firefox|random email|tooLongName|Buggy123!       |
+      |chrome |"random email"|randomName|Buggy123!|
+     # |chrome|no email|randomName|Buggy123!|
+      #|chrome|random email|AndreaAutoUppgift |Buggy123!|
+      #|chrome|random email|tooLongName|Buggy123!       |
+   #   |edge |random email|randomName|Buggy123!|
+    #  |edge |no email|randomName|Buggy123!|
+     # |edge|random email|AndreaAutoUppgift|Buggy123!|
+   #   |edge|"random email"|tooLongName|Buggy123!       |
+     # |firefox |random email|randomName|Buggy123!|
+   #   |firefox|"no email"|randomName|Buggy123!|
+   #   |firefox|random email|AndreaAutoUppgift|Buggy123!|
+  #    |firefox|random email|tooLongName|Buggy123!       |

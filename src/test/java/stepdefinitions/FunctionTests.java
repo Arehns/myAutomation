@@ -28,7 +28,7 @@ public class FunctionTests {
 
 
     private WebDriver driver;
-    FormFieldFinder field = new FormFieldFinder();
+
 
     @Given("user opens Sign up web page in browser {string}")
     public void user_opens_up_browser(String browser) {
@@ -36,19 +36,24 @@ public class FunctionTests {
         driver = creator.createBrowser(browser);
         driver.get("https://login.mailchimp.com/signup/");
     }
-
-
-    //https://www.browserstack.com/guide/sendkeys-in-selenium
     @Given("enter {string}")
     public void enter(String email) {
+        sendKeys(driver, By.id("email"), (email));
+    }
 
-        field.getName(email);
+    private void sendKeys(WebDriver driver, By by, String keys) {
+        (new WebDriverWait(driver,10)).until(ExpectedConditions.presenceOfElementLocated(by));
+        driver.findElement(by.id("email")).sendKeys(keys);
+        System.out.println("Sending keys");
 
     }
 
-
-
 /*
+
+
+
+
+
     @Given("and then enter {string}")
     public void and_then_enter(String user) {
             sendKeys(driver, By.cssSelector("input[name=email]"), user);
@@ -63,24 +68,21 @@ public class FunctionTests {
     }
 
 
-   private void sendKeys(WebDriver driver, By by, email) {
-                    (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(by));
-                    driver.findElement(by).sendKeys(email);
-                    System.out.println("Sending keys");
-                    }
 
 
+private void click(WebDriver driver, By by) {
+        (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(by));
+        driver.findElement(By.name("marketing-newsletter")).click();
 
-    @Then("user receives feedback")
+   /* @Then("user receives feedback")
     public void user_receives_feedback() {
         System.out.println("No answer yet");
-        driver.quit();
+        driver.quit();*/
 
     }
 
-
-    }*/
 /*
+    }
 @When("user clicks on Sign up button")
 public void user_clicks_on_sign_up_button() {
 
@@ -92,5 +94,4 @@ public void user_clicks_on_sign_up_button() {
         (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(by));
         driver.findElement(By.name("marketing-newsletter")).click();
     } */
-    }
-}
+
