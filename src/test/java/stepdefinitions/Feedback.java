@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 
 public class Feedback {
 
-    public void feedBack() {
-        System.out.println("NO");
-        //#signup-content > div
+
+    public String feedBack() {
+       return "Yay last class works";
     }
 }

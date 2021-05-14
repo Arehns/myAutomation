@@ -11,7 +11,8 @@ public class StringModifier {
     private String newTooLongUser = "";
     private int normalLength = 10;
     char[] randomArray = new char[normalLength];
-
+    char[] randomUserArray = new char[normalLength];
+    char[] tooLongArray = new char[102];
     Random rand = new Random();
 
 
@@ -27,20 +28,20 @@ public class StringModifier {
 
     public String randomUserString() {
         for (int i = 0; i < normalLength; i++) {
-            randomArray[i] = characters.charAt(rand.nextInt(characters.length()));
+            randomUserArray[i] = characters.charAt(rand.nextInt(characters.length()));
         }
-        for (int j = 0; j < randomArray.length; j++) {
-            this.newUser += randomArray[j];
+        for (int j = 0; j < randomUserArray.length; j++) {
+            this.newUser += randomUserArray[j];
         }
         return newUser;
     }
 
     public String userNameTooLong() {
         for (int i = 0; i < 102; i++) {
-            randomArray[i] = characters.charAt(rand.nextInt(characters.length()));
+            tooLongArray[i] = characters.charAt(rand.nextInt(characters.length()));
         }
-        for (int j = 0; j < randomArray.length; j++) {
-            this.newTooLongUser += randomArray[j];
+        for (int j = 0; j < tooLongArray.length; j++) {
+            this.newTooLongUser += tooLongArray[j];
         }
         return newTooLongUser;
     }

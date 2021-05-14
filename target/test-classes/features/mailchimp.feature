@@ -13,8 +13,8 @@ Feature: Signing up to mailchimp
       |browser|email|username|password|
       |chrome |randomEmail|randomName|Buggy123!|
       |chrome|noEmail|randomName|Buggy123!|
-      #|chrome|randomEmail|takenUser |Buggy123!|
-      #|chrome|randomEmail|tooLongName|Buggy123!       |
+      |chrome|randomEmail|takenUser |Buggy123!|
+      |chrome|randomEmail|tooLongName|Buggy123!|
     #  |edge |randomEmail|randomName|Buggy123!|
     #  |edge |noEmail|randomName|Buggy123!|
    #   |edge|randomEmail|takenUser|Buggy123!|

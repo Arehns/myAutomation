@@ -13,6 +13,7 @@ public class FunctionTests {
     ButtonClicker c = new ButtonClicker();
     StringModifier g = new StringModifier();
     Feedback f = new Feedback();
+    GetterSetter get = new GetterSetter();
 
 
 
@@ -30,14 +31,15 @@ public class FunctionTests {
 
     @Given("enter {string}")
     public void enter(String email) {
-       email = g.randomEmailString();
-        s.sendKeys(driver, By.name("email"), (email));
+            get.setNewEmail(email);
+            s.sendKeys(driver, By.name("email"), (get.getNewEmail()));
+
     }
 
     @Given("and then enter {string}")
     public void and_then_enter(String user) {
-        user = g.randomUserString();
-        s.sendKeys(driver, By.id("new_username"), (user));
+        get.setNewUser(user);
+        s.sendKeys(driver, By.id("new_username"), (get.getNewUser()));
     }
 
     @Given("then lastly enter {string}")
@@ -53,7 +55,7 @@ public class FunctionTests {
 
     @Then("user receives feedback")
     public void user_receives_feedback() {
-
+        System.out.println(f.feedBack());
         driver.quit();
     }
 
