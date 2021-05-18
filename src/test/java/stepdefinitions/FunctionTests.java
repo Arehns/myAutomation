@@ -6,15 +6,18 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+
+import static org.junit.Assert.assertEquals;
+
+
+
+
 public class FunctionTests {
 
     private WebDriver driver;
     SendKeys s = new SendKeys();
     ButtonClicker c = new ButtonClicker();
-    StringModifier g = new StringModifier();
-    Feedback f = new Feedback();
     GetterSetter get = new GetterSetter();
-
 
 
     @Given("user opens Sign up web page in browser {string}")
@@ -31,8 +34,8 @@ public class FunctionTests {
 
     @Given("enter {string}")
     public void enter(String email) {
-            get.setNewEmail(email);
-            s.sendKeys(driver, By.name("email"), (get.getNewEmail()));
+        get.setNewEmail(email);
+        s.sendKeys(driver, By.name("email"), (get.getNewEmail()));
 
     }
 
@@ -40,6 +43,7 @@ public class FunctionTests {
     public void and_then_enter(String user) {
         get.setNewUser(user);
         s.sendKeys(driver, By.id("new_username"), (get.getNewUser()));
+
     }
 
     @Given("then lastly enter {string}")
@@ -50,14 +54,33 @@ public class FunctionTests {
 
     @When("user clicks on Sign up button")
     public void user_clicks_on_sign_up_button() {
+
         c.click(driver, By.id("create-account"));
     }
 
-    @Then("user receives feedback")
-    public void user_receives_feedback() {
-        System.out.println(f.feedBack());
+
+    @Then("user receives feedback{string}")
+    public void userReceivesFeedback(String status) {
+        if ("success".equals(status)) {
+            String actualString1 = driver.findElement(By.tagName("h1")).getText();
+            assertEquals("Check your email", actualString1);
+            System.out.println(actualString1);
+        } else if ("duplicate".equals(status)) {
+            String actualString2 = driver.findElement(By.className("invalid-error")).getText();
+            assertEquals("Another user with this username already exists. Maybe it's your evil twin. Spooky.", actualString2);
+            System.out.println(actualString2);
+        } else if ("emptyField".equals(status)) {
+            String actualString3 = driver.findElement(By.className("invalid-error")).getText();
+            assertEquals("Please enter a value", actualString3);
+            System.out.println(actualString3);
+        } else if ("maximum".equals(status)) {
+            String actualString4 = driver.findElement(By.className("invalid-error")).getText();
+            assertEquals("Enter a value less than 100 characters long", actualString4);
+            System.out.println(actualString4);
+
+        } else {
+            System.out.println("Something wrong at the last step");
+        }
         driver.quit();
     }
-
 }
-

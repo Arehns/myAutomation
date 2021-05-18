@@ -19,6 +19,7 @@ public class GetterSetter {
 
         }
     }
+
     public String getNewUser() {
         return newUser;
     }
